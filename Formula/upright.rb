@@ -6,8 +6,9 @@ class Upright < Formula
   license "MIT"
   head "https://github.com/harshagv/upright.git", branch: "main"
 
-  depends_on :macos
-  depends_on xcode: ["15.0", :build]
+  # Builds with the Swift toolchain from the Xcode Command Line Tools;
+  # a full Xcode.app install is NOT required.
+  depends_on macos: :sonoma
 
   def install
     # build.sh compiles, assembles, and ad-hoc signs the .app bundle.
